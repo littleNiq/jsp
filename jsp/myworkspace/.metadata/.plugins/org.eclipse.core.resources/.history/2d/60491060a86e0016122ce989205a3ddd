@@ -1,0 +1,5 @@
+package mybean.data;
+import java.util.*;
+public class Login {
+   String logname="",backNews="未登陆";
+}

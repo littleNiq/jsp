@@ -1,0 +1,24 @@
+<%@ page contentType="text/html;charset=utf-8"%>
+<%@ page import="mybean.data.Login"%>
+<%@ page import="java.sql.*"  %>
+<html>
+<jsp:useBean id="loginBean" class="mybean.data.Login" scope="session"/>
+  <head>
+    <%@ include file="head.txt"%>
+  </head>
+  <body bgcolor="#99FFCC"> 
+    <center>
+    <%
+    if(loginBean==null){
+       response.sendRedirect("login.jsp");
+    }else{
+      boolean b=loginBean.getLogname()==null||loginBean.getLogname().trim()==0;
+      if(b)
+         response.sendRedirect("login.jsp");
+    }
+    String mobileID=request.getParameter("xijie");
+    out.print("<th>产品号"+mobileID)；
+     %>
+    </center>
+  </body>
+</html>

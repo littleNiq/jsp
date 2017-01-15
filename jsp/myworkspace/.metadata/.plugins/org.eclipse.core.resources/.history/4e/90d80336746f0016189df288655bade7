@@ -1,0 +1,13 @@
+<%@ page contentType="text/html;charset=utf-8"%>
+<%@ page import="mybean.data.Login"%>
+<%@ page import="java.sql.*"  %>
+<html>
+<jsp:useBean id="loginBean" class="mybean.data.Login" scope="session"/>
+  <head>
+    
+  </head>
+  
+  <body> 
+    =This is my JSP page. <br>
+  </body>
+</html>

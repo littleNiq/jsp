@@ -1,0 +1,21 @@
+<%@ page contentType="text/html;charset=utf-8"%>
+<%@ page import="java.sql.*"%>
+<html>
+<jsp:useBean id="loginBean" class="mybean.data.Login" scope="session"/>
+  <head>
+    <%@ include file="head.txt"%>
+  </head>
+  <body bgcolor="#55BBCC">
+    <div align="center">
+      <%
+        if(loginBean==null){
+           response.sendRedirect("login.jsp");
+        }else{
+          boolean b=loginBean.getLogname()==null||loginBean.getLogname().length()==0;
+          if(b)
+             response.sendRedirect("login.jsp");
+        }
+       %>
+    </div>
+  </body>
+</html>

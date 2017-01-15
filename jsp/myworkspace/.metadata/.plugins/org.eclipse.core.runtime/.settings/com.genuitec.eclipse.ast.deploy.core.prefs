@@ -1,0 +1,13 @@
+#Wed Sep 14 10:17:42 CST 2016
+myeclipseTomcatServer.mobileShop.shouldBackup=false
+myeclipseTomcatServer.mobileShop.type=WebDeployment
+myeclipseTomcatServer.mobileShop.contextRoot=/mobileShop
+myeclipseTomcatServer.mobileShop.isUptoDate=true
+myeclipseTomcatServer.mobileShop.isExploded=true
+myeclipseTomcatServer.mobileShop.deploymentPath=H\:\\jsp\\myworkspace\\.metadata\\.me_tcat\\webapps\\mobileShop
+myeclipseTomcatServer.mobileShop.deployIsOverProject=false
+myeclipseTomcatServer.mobileShop.altContextRoot=/mobileShop
+eclipse.preferences.version=1
+myeclipseTomcatServer.mobileShop.isDeployed=true
+myeclipseTomcatServer.mobileShop.shouldOverwrite=false
+myeclipseTomcatServer.mobileShop.IEARProjectName=

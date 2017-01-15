@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 1 elements(s) to &apos;WebRoot&apos;&#x0D;&#x0A;- Original project: &apos;mobileShop&apos;&#x0D;&#x0A;- Destination element: &apos;WebRoot&apos;&#x0D;&#x0A;- Original element: &apos;head.txt&apos;" description="Copy file" element1="WebRoot/head.txt" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1473765483248" target="/SYTphone/WebRoot" units="0" version="1.0"/>
+</session>

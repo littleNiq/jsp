@@ -1,0 +1,44 @@
+<%@ page contentType="text/html;charset=utf-8"%>
+<%@ page import="java.sql.*"%>
+<html>
+<jsp:useBean id="loginBean" class="mybean.data.Login" scope="session"/>
+  <head>
+    <%@ include file="head.txt"%>
+  </head>
+  <body bgcolor="#55BBCC">
+    <div align="center">
+      <%
+        if(loginBean==null){
+           response.sendRedirect("login.jsp");
+        }else{
+          boolean b=loginBean.getLogname()==null||loginBean.getLogname().length()==0;
+          if(b)
+             response.sendRedirect("login.jsp");
+        }
+        Connection con;
+        Statement sql;
+        ResultSet rs;
+        try{
+          Class.forName("com.mysql.jdbc.driver");
+        }catch(Exception e){}
+        try{
+           String uri="jdbc:mysql://127.0.0.1/mobileshop";
+           String user="root";
+           String password="";
+           con=DriverManager.getConnection(uri,user,password);
+           sql=con.createStatement();
+           String cdn="selectid,mess,sum from orderform where logname='"+loginBean.getLogname()+"'";
+           rs=sql.executeQuery(cdn);
+           out.print("<table border=2>");
+           out.print("<tr>");
+           out.print("<th width=100>"+"订单号"+"</th>");
+           out.print("<th width=100>"+"信息"+"</th>");
+           out.print("<th width=100>"+"价格"+"</th>");
+           out.print("</tr>");
+        }catch(SQLException e){
+           out.print(e);
+        }
+       %>
+    </div>
+  </body>
+</html>

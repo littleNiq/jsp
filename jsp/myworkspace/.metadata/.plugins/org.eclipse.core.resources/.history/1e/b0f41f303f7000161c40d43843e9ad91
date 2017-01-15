@@ -1,0 +1,49 @@
+<%@ page contentType="text/html;charset=utf-8"%>
+<%@ page import="mybean.data.DataByPage"%>
+<%@ page import="com.sun.rowset.*"%>
+<jsp:useBean id="dataBean" class="mybean.data.DataByPage" scope="session"/>
+<%@ include file="head.txt" %>
+<html>
+  <head>
+  </head> 
+  <body bgcolor="#66FFAA"><center>
+    <br>当前显示的内容是：
+    <table border=2>
+      <tr>
+        <th>手机标识号</th>
+        <th>手机名称</th>
+        <th>手机制造商</th>
+        <th>手机价格</th>
+        <th>查看详情</th>
+        <td><font color=blue>添加到购物车</font></td>
+      </tr>
+      <jsp:setProperty name="dataBean" property="pageSize" param="pageSize"/>
+      <jsp:setProperty name="dataBean" property="currentPage" param="currentPage"/>
+      <%
+        CachedRowSetImpl rowSet=dataBean.getRowSet();
+        if(rowSet==null){
+          out.print("没有任何查询信息，无法浏览");
+          return;
+        }
+        rowSet.last();
+        int totalRecord=rowSet.getRow();
+        out.print("全部记录"+totalRecord);
+        int pageSize=dataBean.getPageSize();
+        int totalPages=dataBean.getTotalPages();
+        if(totalRecord%pageSize==0)
+          totalPages=totalRecord/pageSize;
+          else
+          totalPages=totalRecord/pageSize+1;
+          dataBean.setPageSize(pageSize);
+          dataBean.setTotalPages(totalPages);
+          if(totalPages>=1){
+            if(dataBean.getCurrentPage()<1)
+            dataBean.setCurrentPage(dataBean.getTotalPages());
+          }
+       %>
+    </table>
+  </center>
+
+  </body>
+</html>
+

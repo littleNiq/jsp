@@ -1,0 +1,24 @@
+<%@ page contentType="text/html;charset=utf-8"%>
+<html>
+<jsp:useBean id="loginBean" class="mybean.data.Login" scope="session"/>
+  <head>
+    <%@ include file="head.txt"%>
+  </head>
+  <body bgcolor="pink">
+    <font size="2">
+       <div align="center">
+         <table border="2">
+           <tr><th>登陆</th></tr>
+           <form action="loginServlet" method="post">
+             <tr><td>登录名称:<input type="text" name="logname"/></td></tr>
+             <tr><td>输入密码:<input type="password" name="password"/></td></tr>
+           </form>
+           <input type="submit" name="g" value="提交"/>
+         </table>
+       </div>
+       <div align="center">
+          登录反馈信息:<br>
+       </div>
+    </font>
+  </body>
+</html>

@@ -1,0 +1,10 @@
+<%@ page contentType="text/html;charset=utf-8"%>
+<html>
+<jsp:useBean id="loginBean" class="mybean.data.Login"/>
+  <head>
+    <%@ include file="head.txt"%>
+  </head>
+  <body>
+    This is my JSP page. <br>
+  </body>
+</html>

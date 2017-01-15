@@ -1,0 +1,9 @@
+package mybean.data;
+import java.util.*;
+public class Login {
+   String logname="",backNews="未登陆";
+   LinkedList<String> car;
+   public Login(){
+	   car=new LinkedList<String>();
+   }
+}
